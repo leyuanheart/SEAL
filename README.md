@@ -15,7 +15,7 @@ The OhioT1DM dataset is available from [http://smarthealth.cs.ohio.edu/OhioT1DM-
 ## Description
 
 In our experiment, we divide each day of follow-up into one hour intervals and a treatment decision is made every
-hour. We consider three important time-varying state variables, including the average blood glucose levels $G_{t}$ during the one hour interval $(t-1, t]$, the carbohydrate estimate for the meal $C_{t}$ during $(t-1, t]$ and $\text{Ex}_{t}$ which measures exercise intensity during $(t-1, t]$. At time $t$, we define the action $A_t$ by discretizing the amount of insulin $\text{In}_t$ injected. The reward $R_t$ is chosen according to the Index of Glycemic Control that is a deterministic function $G_{t+1}$. Detailed definitions of $A_t$ and $R_t$ are given as follows,
+hour. We consider three important time-varying state variables, including the average blood glucose levels $G_{t}$ during the one hour interval $(t-1, t]$, the carbohydrate estimate for the meal $C_{t}$ during $(t-1, t]$ and $\text{Ex}_{t}$ which measures exercise intensity during $(t-1, t]$. At time $t$, we define the action $A_t$ by discretizing the amount of insulin $\text{In}\_t$ injected. The reward $R_t$ is chosen according to the Index of Glycemic Control that is a deterministic function $G_{t+1}$. Detailed definitions of $A_t$ and $R_t$ are given as follows,
 
 
 

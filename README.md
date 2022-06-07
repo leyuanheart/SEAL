@@ -17,8 +17,6 @@ The OhioT1DM dataset is available from [http://smarthealth.cs.ohio.edu/OhioT1DM-
 In our experiment, we divide each day of follow-up into one hour intervals and a treatment decision is made every
 hour. We consider three important time-varying state variables, including the average blood glucose levels $G_{t}$ during the one hour interval $(t-1, t]$, the carbohydrate estimate for the meal $C_{t}$ during $(t-1, t]$ and $\text{Ex}_{t}$ which measures exercise intensity during $(t-1, t]$. At time $t$, we define the action $A_t$ by discretizing the amount of insulin $\text{In}\_t$ injected. The reward $R\_t$ is chosen according to the Index of Glycemic Control that is a deterministic function $G\_{t+1}$. Detailed definitions of $A\_t$ and $R\_t$ are given as follows,
 
-
-
 $$A_t  = \begin{cases}
 0, & \text{In}_t = 0; \\
 m, & 4m-4 < \text{In}_t \le 4m \,~~(m=1, 2, 3); \\
@@ -29,9 +27,7 @@ m, & 4m-4 < \text{In}_t \le 4m \,~~(m=1, 2, 3); \\
 -\frac{1}{30}(G_{t+1} - 140)^{1.35}, & 140 \le G_{t+1}.
 \end{cases}$$
 
-
-
-Let $X\_t=(G\_t,C\_t,\hbox{Ex}\_t)$. We define the state $S\_t$ by concatenating measurements over the last four decision points, i.e., $S\_t = (X\_{t-3}^T, A\_{t-3}, \cdots, X\_t)^\top$. This ensures the Markov assumption is satisfied. The number of decision points for each patient in the OhioT1DM dataset ranges from 1119 to 1288. Transitions across different days are treated as independent trajectories. 
+Let $X\_t=(G\_t,C\_t,\hbox{Ex}\_t)$. We define the state $S\_t$ by concatenating measurements over the last four decision points, i.e., $S\_t = (X\_{t-3}, A\_{t-3}, \cdots, X\_t)^\top$. This ensures the Markov assumption is satisfied. The number of decision points for each patient in the OhioT1DM dataset ranges from 1119 to 1288. Transitions across different days are treated as independent trajectories. 
 
 The data used in the paper is called the `trajs_mh.pkl`.  However, for confidentiality considerations, we add some noises to the data and provide the `trajs_mh_sim.pkl` in the `data` folder.  The code to generate these two data is placed in the `generate_trajs_mh.py`  in the `data` folder. Once you have downloaded the raw data, put it in the same folder as the code, and then run the code to get the data used in this paper.
 

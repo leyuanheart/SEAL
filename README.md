@@ -80,12 +80,12 @@ All experiments run on a single computer instance with 40 Intel(R) Xeon(R) 2.20G
 
 ## Synthetic data results
 
-- copy the `data/trajs_qr_dqn.pkl` under the `data/online` folder  to the `lunarlander-v2/dqn_2_200/random/` folder, and switch to the `lunarlander-v2` and run `python batch_peal_vs_dqn.py &` (around 20 hours without GPU support). This will generate DQN V.S. PEAL offline training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. Same procedures to take with `Qbert-ram-v0`.
+- copy the `data/trajs_qr_dqn.pkl` under the `data/online` folder  to the `lunarlander-v2/dqn_2_200/random/` folder, and switch to the `lunarlander-v2` and run `python batch_seal_vs_dqn.py &` (around 20 hours without GPU support). This will generate DQN V.S. SEAL offline training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. Same procedures to take with `Qbert-ram-v0`.
 - 
 
 ## Real data results
 
-- run the `DQN_mh.ipynb` under the `realdata` after putting the `trajs_mhm.pkl` which is in the `data` folder into the `realdata/data/mh/dqn` folder. This will generate DQN v.s. PEAL training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. 
+- run the `DQN_mh.ipynb` under the `realdata` after putting the `trajs_mhm.pkl` which is in the `data` folder into the `realdata/data/mh/dqn` folder. This will generate DQN v.s. SEAL training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. 
 - 
 
 ## Figures

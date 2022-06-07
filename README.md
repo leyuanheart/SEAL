@@ -21,7 +21,9 @@ $$A_t  = \begin{cases}
 0, & \text{In}_t = 0; \\
 m, & 4m-4 < \text{In}_t \le 4m \,~~(m=1, 2, 3); \\
 4, & \text{In}_t > 12.
-\end{cases} ~~~~~~~~~~~~R_t = \begin{cases}
+\end{cases}$$ 
+
+$$R_t = \begin{cases}
 -\frac{1}{30}(80-G_{t+1})^2, & G_{t+1} < 80; \\
 0, & 80 \le G_{t+1} \le 140; \\
 -\frac{1}{30}(G_{t+1} - 140)^{1.35}, & 140 \le G_{t+1}.

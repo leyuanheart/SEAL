@@ -16,9 +16,9 @@ import copy
 import os
 import sys
 
-from peal.utils.epsilon_decay import linearly_decaying_epsilon
-from peal.replay_buffers.replay_buffer import ReplayBuffer, PrioritizedReplayBuffer
-from peal.agents.default_config import DEFAULT_CONFIG as config
+from seal.utils.epsilon_decay import linearly_decaying_epsilon
+from seal.replay_buffers.replay_buffer import ReplayBuffer, PrioritizedReplayBuffer
+from seal.agents.default_config import DEFAULT_CONFIG as config
 
 
 KLNetworktype = collections.namedtuple(

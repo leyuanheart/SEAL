@@ -1,4 +1,4 @@
-from peal.utils.epsilon_decay import linearly_decaying_epsilon
+from seal.utils.epsilon_decay import linearly_decaying_epsilon
 
 DEFAULT_CONFIG = {
     # === quantile dqn network ===

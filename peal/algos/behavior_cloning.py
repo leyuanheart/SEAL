@@ -2,7 +2,7 @@ import random
 import numpy as np
 import tensorflow as tf
 
-from peal.models.basic_models import MLPNetwork
+from seal.models.basic_models import MLPNetwork
 
 class BehaviorCloning:
     def __init__(self, num_actions=4, 

@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-from peal.models.basic_models import MLPNetwork
+from seal.models.basic_models import MLPNetwork
 
 def change_rate(old_targets, new_targets):
     diff = abs(new_targets-old_targets).mean() / (abs(old_targets).mean()+1e-6)

@@ -1,10 +1,10 @@
 import random
-import gym
+import gymimport
 import numpy as np
 import copy
 import tensorflow as tf
 
-from peal.models.basic_models import MLPNetwork
+from seal.models.basic_models import MLPNetwork
 
 class AdvantageLearner:
     def __init__(self, name=None, num_actions=None,

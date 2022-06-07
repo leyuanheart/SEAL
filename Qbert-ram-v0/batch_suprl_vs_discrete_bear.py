@@ -18,14 +18,14 @@ path = os.path.abspath('..')
 if path not in sys.path:
     sys.path.append(path)
 
-from peal.agents.default_config import DEFAULT_CONFIG as config
-from peal.agents.kl_control import KLAgent
+from seal.agents.default_config import DEFAULT_CONFIG as config
+from seal.agents.kl_control import KLAgent
 
-from peal.algos.kfold import KFoldCV
+from seal.algos.kfold import KFoldCV
 
-from peal.algos.advantage_learner import AdvantageLearner
-from peal.algos.behavior_cloning import BehaviorCloning
-from peal.algos.density_ratio import VisitationRatioModel
+from seal.algos.advantage_learner import AdvantageLearner
+from seal.algos.behavior_cloning import BehaviorCloning
+from seal.algos.density_ratio import VisitationRatioModel
 
 from collections import defaultdict
 
@@ -49,7 +49,7 @@ def compare_within_ckpt(kf, bc, config, working_directory,
                         replica= 1,
                         name = None,
                         num_actions = None):
-    # 0 for peal, 1 for dml, 2 for single agent
+    # 0 for seal, 1 for dml, 2 for single agent
     ckpt_result = defaultdict(list)
 
     for ckpt in [i * int(1e4) for i in range(1, int(config['max_training_steps'] / 1e4) + 1)]:
@@ -91,9 +91,9 @@ def compare_within_ckpt(kf, bc, config, working_directory,
         #     agent_name, strategy, num_trajectories, num_kf, ckpt, datetime.now().strftime('%Y%m%d_%H-%M-%s')))
         # plt.savefig(ad_pic_file_path)
         
-        # record dml, peal rewards
+        # record dml, seal rewards
         # ckpt_result['dml_mean_reward'].append(eval_episode_rewards1.mean())
-        ckpt_result['peal_mean_reward'].append(eval_episode_rewards2.mean())
+        ckpt_result['seal_mean_reward'].append(eval_episode_rewards2.mean())
 
         # [agents[idx]._eval(100) for idx in range(kf.n_splits)]
 
@@ -128,10 +128,10 @@ def compare_within_ckpt(kf, bc, config, working_directory,
         print('Recording check point results...')
 
     # ckpt_result_pdf = pd.DataFrame(ckpt_result)
-    # ckpt_result_pdf = ckpt_result_pdf[['peal_mean_reward', 'dml_mean_reward', 
+    # ckpt_result_pdf = ckpt_result_pdf[['seal_mean_reward', 'dml_mean_reward', 
     #                                    'single_agent_mean_reward'] + ['cv{}'.format(i) for i in range(num_kf)]]
     ckpt_result_pdf = pd.DataFrame(ckpt_result)
-    ckpt_result_pdf = ckpt_result_pdf[['peal_mean_reward',  
+    ckpt_result_pdf = ckpt_result_pdf[['seal_mean_reward',  
                                        'single_agent_mean_reward']]
     
     file_directory = os.path.join(working_directory, 'csv')

@@ -33,7 +33,7 @@ The data used in the paper is called `trajs_mh.pkl`.  However, for confidentiali
 
 ## Synthetic data
 
-Two OpenAI Gym environments,` LunarLander-v2` and `Qbert-ram-v0` are used to generate the synthetic data. You can run  `qr_dqn_online.ipynb` in `data` folder and change the `env_name` and `num_actions` to get `trajs_qr_dqn_lunar.pkl` and `trajs_qr_dqn_qbert.pkl` in `data/online` folder respectively.
+Two OpenAI Gym environments,` LunarLander-v2` and `Qbert-ram-v0` are used to generate the synthetic data. You can run  `qr_dqn_online.ipynb` in `data` folder and change the `env_name` and `num_actions` to get `trajs_qr_dqn_lunar.pkl` and `trajs_qr_dqn_qbert.pkl`  respectively. These two files are zipped in `data/simulation_data.rar`. 
 
 # Part 2: Code
 

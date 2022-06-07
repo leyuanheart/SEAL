@@ -33,17 +33,17 @@ m, & 4m-4 < \text{In}_t \le 4m \,~~(m=1, 2, 3); \\
 
 Let $X_t=(G_t,C_t,\hbox{Ex}_t)$. We define the state $S_t$ by concatenating measurements over the last four decision points, i.e., $S_t = (X_{t-3}^T, A_{t-3}, \cdots, X_t)^\top$. This ensures the Markov assumption is satisfied. The number of decision points for each patient in the OhioT1DM dataset ranges from 1119 to 1288. Transitions across different days are treated as independent trajectories. 
 
-The data used in the paper is called `trajs_mh.pkl`.  However, for confidentiality considerations, we add some noises to the data and provide `trajs_mh_sim.pkl` in `data` folder.  The code to generate these two data is placed in `generate_trajs_mh.py`  in `data` folder. Once you have downloaded the raw data, put it in the same folder as the code, and then run the code to get the data used in this paper.
+The data used in the paper is called the `trajs_mh.pkl`.  However, for confidentiality considerations, we add some noises to the data and provide the `trajs_mh_sim.pkl` in the `data` folder.  The code to generate these two data is placed in the `generate_trajs_mh.py`  in the `data` folder. Once you have downloaded the raw data, put it in the same folder as the code, and then run the code to get the data used in this paper.
 
 ## Synthetic data
 
-Two OpenAI Gym environments,` LunarLander-v2` and `Qbert-ram-v0` are used to generate the synthetic data. You can run  `qr_dqn_online.ipynb` in `data` folder and change the `env_name` and `num_actions` to get `trajs_qr_dqn_lunar.pkl` and `trajs_qr_dqn_qbert.pkl`  respectively. These two files are zipped in `data/simulation_data.rar`. 
+Two OpenAI Gym environments,` LunarLander-v2` and `Qbert-ram-v0` are used to generate the synthetic data. You can run  the `qr_dqn_online.ipynb` in the `data` folder and change the `env_name` and `num_actions` to get the `trajs_qr_dqn_lunar.pkl` and the `trajs_qr_dqn_qbert.pkl`  respectively. These two files are zipped in the `data/simulation_data.rar`. 
 
 # Part 2: Code
 
 ## Abstract
 
-`seal` folder contains the core code to implement the proposed method and various utility functions.
+The `seal` folder contains the core code to implement the proposed method and various utility functions.
 
 ## Description
 
@@ -57,7 +57,7 @@ Two OpenAI Gym environments,` LunarLander-v2` and `Qbert-ram-v0` are used to gen
 
 ### Computational Complexity
 
-we assume that the forward and backward of network complexity is `S`
+we assume that the forward and backward of network complexity is `S`.
 
 - step 2: training `L` DQN agents, batch size `B_1`, training steps `I_1`, total `O(L * I_1 * B_1 * S)`
 - step 3: training `L` density estimators, batch size `B_2`, training steps `I_2`, total `O(L * I_2 * B_2^4 * S)`
@@ -82,12 +82,12 @@ All experiments run on a single computer instance with 40 Intel(R) Xeon(R) 2.20G
 
 ## Synthetic data results
 
-- copy the `data/trajs_qr_dqn.pkl` under `data/online` folder  to `lunarlander-v2/dqn_2_200/random/` folder, and switch to `lunarlander-v2` and run `python batch_peal_vs_dqn.py &` (around 20 hours without GPU support). This will generate DQN V.S. PEAL offline training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. Same procedures to take with `Qbert-ram-v0`.
+- copy the `data/trajs_qr_dqn.pkl` under the `data/online` folder  to the `lunarlander-v2/dqn_2_200/random/` folder, and switch to the `lunarlander-v2` and run `python batch_peal_vs_dqn.py &` (around 20 hours without GPU support). This will generate DQN V.S. PEAL offline training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. Same procedures to take with `Qbert-ram-v0`.
 - 
 
 ## Real data results
 
-- run `DQN_mh.ipynb` under `realdata` after putting `trajs_mh_sim.pkl` which is in the `data` folder into the `realdata/data/mh/dqn` folder and change its name to `trajs_mh.pkl`. This will generate DQN V.S. PEAL training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. 
+- run the `DQN_mh.ipynb` under the `realdata` after putting the `trajs_mhm.pkl` which is in the `data` folder into the `realdata/data/mh/dqn` folder. This will generate DQN v.s. PEAL training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. 
 - 
 
 ## Figures

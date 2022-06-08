@@ -85,7 +85,7 @@ All experiments run on a single computer instance with 40 Intel(R) Xeon(R) 2.20G
 
 ## Real data results
 
-- run the `DQN_mh.ipynb` under the `realdata` after putting the `trajs_mh.pkl` which is in the `data` folder into the `realdata/data/mh/dqn` folder. This will generate DQN v.s. SEAL training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. 
+- run the `DQN_mh.ipynb` under the `realdata` after putting the `trajs_mh.pkl` into the `realdata/data/mh/dqn` folder. This will generate DQN v.s. SEAL training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. 
 - We aggregate all the results in the `real_data_results` folder containing `dqn.csv`, `ddqn.csv`, `qrdqn.csv` and `4_methods.csv`.
 
 ## Figures

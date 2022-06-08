@@ -74,7 +74,7 @@ All experiments run on a single computer instance with 40 Intel(R) Xeon(R) 2.20G
 - pandas == 1.0.3
 - sklearn == 0.22.1
 - tensorflow == 2.1.0
-- tendorflow-probability == 0.9
+- tensorflow-probability == 0.9
 - gym == 0.17.3
 
 # Part 3: Reproducibility workflow

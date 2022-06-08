@@ -1,5 +1,5 @@
 import random
-import gymimport
+import gym
 import numpy as np
 import copy
 import tensorflow as tf

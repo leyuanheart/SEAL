@@ -90,4 +90,4 @@ All experiments run on a single computer instance with 40 Intel(R) Xeon(R) 2.20G
 
 ## Figures
 
-You can get Figure 1, Figure 2 and Figure 3 in the article by running the `plot_figures.py` file.
+You can get the Figure 1, Figure 2 and Figure 3 in the article by running the `plot_figures.py` file.

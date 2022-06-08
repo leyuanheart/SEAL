@@ -91,3 +91,12 @@ All experiments run on a single computer instance with 40 Intel(R) Xeon(R) 2.20G
 ## Figures
 
 You can get the Figure 1, Figure 2 and Figure 3 in the article by running the  file `plot_figures.py`.
+
+# Notes
+
+## Thanks to Repos:
+
+- https://github.com/google-research/batch_rl
+- https://github.com/ray-project/ray
+- https://github.com/sfujim/BCQ
+- https://github.com/aviralkumar2907/BEAR

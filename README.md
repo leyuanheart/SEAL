@@ -81,12 +81,12 @@ All experiments run on a single computer instance with 40 Intel(R) Xeon(R) 2.20G
 
 ## Synthetic data results
 
-- copy the `data/data/synthetic_data.rar/trajs_qr_dqn_lunar.pkl` to the `lunarlander-v2/dqn_2_200/random/` folder, and change its name to `trajs_qr_dqn.pkl`. Use the `cd` command to switch to the `lunarlander-v2` directory and run the python file `batch_seal_vs_dqn.py` (around 20 hours without GPU support). This will generate DQN v.s. SEAL offline training results under 200 trajectories randomly sampled out of the total trajectories. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. Same procedures to take with `Qbert-ram-v0`.
+- copy the `data/data/synthetic_data.rar/trajs_qr_dqn_lunar.pkl` to the `lunarlander-v2/dqn_2_200/random/` folder, and change its name to `trajs_qr_dqn.pkl`. Use the `cd` command to switch to the `lunarlander-v2` directory and run the python file `batch_seal_vs_dqn.py` (around 20 hours without GPU support). This will generate DQN v.s. SEAL offline training results under 200 trajectories randomly sampled out of the total trajectories in a `.csv` file. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. Same procedures to take with `Qbert-ram-v0`.
 - We aggregate all the results in the `synthetic_results` folder with `plots_lunar` and `plots_qbert` folders. Each folder contains `dqn.csv`, `ddqn.csv`, `qrdqn.csv` and `4_methods.csv`.
 
 ## Real data results
 
-- Run the `DQN_mh.ipynb` under the `realdata` folder after putting the `trajs_mh.pkl` into the `realdata/data/mh/dqn` folder. This will generate DQN v.s. SEAL training results. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. 
+- Run the `DQN_mh.ipynb` under the `realdata` folder after putting the `trajs_mh.pkl` into the `realdata/data/mh/dqn` folder. This will generate DQN v.s. SEAL training results in a `.pkl` file. Similarly, we can obtain DDQN, QR-DQN, REM, Discrete-BCQ and Discrete-BEAR results. 
 - We aggregate all the results in the `real_data_results` folder containing `dqn.csv`, `ddqn.csv`, `qrdqn.csv` and `4_methods.csv`.
 
 ## Figures

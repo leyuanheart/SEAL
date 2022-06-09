@@ -1,7 +1,7 @@
 from datetime import datetime
 import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set(style="darkgrid")
+# import seaborn as sns
+# sns.set(style="darkgrid")
 
 import numpy as np
 import pandas as pd
@@ -139,7 +139,7 @@ def compare_within_ckpt(kf, bc, config, working_directory,
     
     file_directory = os.path.join(working_directory, 'csv')
     if not os.path.isdir(file_directory):
-        os.mkdir(file_directory)
+        os.makedirs(file_directory)
     file_path = os.path.join(file_directory, 'ag_{}-sp_{}-nt_{}-kf_{}-rca_{}.csv'.format(
         agent_name, strategy, num_trajectories, num_kf, replica))
     print('Save all records to {}'.format(file_path))
@@ -201,15 +201,15 @@ def one_round_run(replica,
     # file_path = 'ddqn_{}_single_rc{}_dt{}.jpg'.format(strategy, replica, datetime.now().strftime('%Y%m%d_%H-%M-%s'))
     # pic_dir = os.path.join(working_directory, 'pic')
     # if not os.path.isdir(pic_dir):
-    #     os.mkdir(pic_dir)
+    #     os.makedirs(pic_dir)
     # plt.savefig(os.path.join(pic_dir, file_path))
 
-    print('Save Single Agent Training...')
-    file_name = 'offline-single-lr{}-dedcay_step{}-max_training_steps{}'.format(
-    config['lr'], config['decay_steps'], config['max_training_steps'])
-    save_weight_dir = os.path.join(working_directory, 'model_save')
-    file_path = '{file_name}.weights'.format_map({'file_name': file_name})
-    agent.save(os.path.join(working_directory, file_name, file_path))
+    # print('Save Single Agent Training...')
+    # file_name = 'offline-single-lr{}-dedcay_step{}-max_training_steps{}'.format(
+    # config['lr'], config['decay_steps'], config['max_training_steps'])
+    # save_weight_dir = os.path.join(working_directory, 'model_save')
+    # file_path = '{file_name}.weights'.format_map({'file_name': file_name})
+    # agent.save(os.path.join(working_directory, file_name, file_path))
     
     print('Cross Validating...')
     for idx in range(kf.n_splits):

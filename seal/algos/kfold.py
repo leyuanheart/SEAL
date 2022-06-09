@@ -24,22 +24,22 @@ class CVS(object):
         digits = np.random.randint(1000000000, size=1)[0]
         dirname = dirname + '/tmp/' + str(digits)
         if not os.path.exists(dirname):
-            os.mkdir(dirname)
+            os.makedirs(dirname)
         
         self.fold_paths = [dirname + '/fold' + str(k) for k in range(self.n_splits)]
         for path in self.fold_paths:
             if not os.path.exists(path):
-                os.mkdir(path)
+                os.makedirs(path)
         
         self.train_paths = [fold_path + '/train/' for fold_path in self.fold_paths]
         for path in self.train_paths:
             if not os.path.exists(path):
-                os.mkdir(path)        
+                os.makedirs(path)        
         
         self.test_paths = [fold_path + '/test/' for fold_path in self.fold_paths]
         for path in self.test_paths:
             if not os.path.exists(path):
-                os.mkdir(path)
+                os.makedirs(path)
         
     def split(self):
         with open(self.path, 'rb') as f:
@@ -78,11 +78,11 @@ class KFoldCV(object):
         
         agent_path = dirname + '/agent/'
         if not os.path.exists(agent_path):
-            os.mkdir(agent_path)
+            os.makedirs(agent_path)
             
         ckpt_path = agent_path + 'ckpt/'
         if not os.path.exists(ckpt_path):
-            os.mkdir(ckpt_path)
+            os.makedirs(ckpt_path)
             
         with open(agent_path + 'trajs.pkl', 'wb') as f:
             pickle.dump(self.trajs, f)
@@ -90,12 +90,12 @@ class KFoldCV(object):
         agent_paths = [dirname + '/agent{}/'.format(k) for k in range(self.n_splits)]
         for path in agent_paths:
             if not os.path.exists(path):
-                os.mkdir(path)
+                os.makedirs(path)
                 
         ckpt_paths = [agent_path + 'ckpt/' for agent_path in agent_paths]
         for path in ckpt_paths:
             if not os.path.exists(path):
-                os.mkdir(path)
+                os.makedirs(path)
 
         for k, (train_index, test_index) in enumerate(self.kf.split(self.trajs)):
             train_trajs = [self.trajs[index] for index in train_index]    # 只把训练集中轨迹拿出来训练Q_hat的参数

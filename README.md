@@ -1,4 +1,4 @@
-# SEAL
+# Statistically Efficient Advantage Learning for Offline Reinforcement Learning in Infinite Horizons
 
 # Author Contributions Checklist Form
 
@@ -57,10 +57,10 @@ The `seal` folder contains the core code to implement the proposed method and va
 
 we assume that the forward and backward of network complexity is `S`.
 
-- step 2: training `L` DQN agents, batch size `B_1`, training steps `I_1`, total `O(L * I_1 * B_1 * S)`
-- step 3: training `L` density estimators, batch size `B_2`, training steps `I_2`, total `O(L * I_2 * B_2^4 * S)`
-- step 4: pseudo Q computations, batch size `B_3`, total `O(B_3 * N * T * A * S)`, where `N` number of trajs, `T` average length of trajs, `A` number of actions.
-- step 5: training tau, batch size `B_4`, training steps `I_4`, total `O(I_4 * B_4 * S)`
+- step 2 (Policy optimization): training `L` DQN agents, batch size `B_1`, training steps `I_1`, total `O(L * I_1 * B_1 * S)`
+- step 3 (Estimation of the density ratio): training `L` density estimators, batch size `B_2`, training steps `I_2`, total `O(L * I_2 * B_2^4 * S)`
+- step 4 (Construction of Pseudo Outcomes):  batch size `B_3`, total `O(B_3 * N * T * A * S)`, where `N` number of trajs, `T` average length of trajs, `A` number of actions.
+- step 5 (Training $\tau$): batch size `B_4`, training steps `I_4`, total `O(I_4 * B_4 * S)`
 
 ## Optional Information
 
@@ -91,7 +91,7 @@ All experiments run on a single computer instance with 40 Intel(R) Xeon(R) 2.20G
 
 ## Figures
 
-You can get the Figure 1, Figure 2 and Figure 3 in the article by running the  file `plot_figures.py`. The `figs` folder contains these figures named `lunar_lander.png`, `qbert.png` and `seal_mh.png`.  
+You can get the Figure 2, Figure 3 and Figure 4 in the article by running the  file `plot_figures.py`. The `figs` folder contains these figures named `lunar_lander.png`, `qbert.png` and `seal_mh.png`.  
 
 # References
 

@@ -54,7 +54,7 @@ def compare_within_ckpt(kf, bc, config, working_directory,
     # 0 for seal, 1 for dml, 2 for single agent
     ckpt_result = defaultdict(list)
 
-    for ckpt in [i * int(1e4) for i in range(int(config['max_training_steps'] / 1e4))]:
+    for ckpt in [i * int(1e4) for i in range(1, int(config['max_training_steps'] / 1e4) + 1)]:
         print('Evaluate with ckpt {}...'.format(ckpt))
         agents = []
 

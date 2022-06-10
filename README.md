@@ -91,7 +91,7 @@ All experiments run on a single computer instance with 40 Intel(R) Xeon(R) 2.20G
 
 ## Figures
 
-You can get the Figure 2, Figure 3 and Figure 4 in the article by running the  file `plot_figures.py`. The `figs` folder contains these figures named `lunar_lander.png`, `qbert.png` and `seal_mh.png`.  
+You can get the Figure 2, Figure 3 and Figure 4 in the article by running the  file `plot_figures.py`. The `figs` folder contains these figures named `Figure_2.png`, `Figure_3.png` and `Figure_4.png`.  
 
 # References
 

@@ -21,7 +21,7 @@ import numpy as np
 import pandas as pd
 
 
-# =============================================================================
+# ============================ LunarLander-v2 =======================================
 dir = './synthetic_results/plots_lunar'
 
 paths = [ 'dqn.csv', 'ddqn.csv', 'qrdqn.csv', '4_methods.csv']
@@ -83,12 +83,12 @@ axes[3].legend(loc='upper left', fontsize=10)
 
 axes[0].set_ylabel('value')
 # plt.subplots_adjust(left=None, bottom=0.3, right=None, top=None, wspace=0.05, hspace=None)
-plt.savefig('lunar_lander.png', dpi=400)
+plt.savefig('Figure_2.png', dpi=400)
 # ========================================================================================
 
 
 
-# =============================================================================
+# ============================== Qbert-ram-v0 ====================================
 dir = './synthetic_results/plots_qbert'
 
 paths = [ 'dqn.csv', 'ddqn.csv', 'qrdqn.csv', '4_methods.csv']
@@ -150,13 +150,13 @@ axes[3].legend(loc='upper left', fontsize=10)
 
 axes[0].set_ylabel('value')
 # plt.subplots_adjust(left=None, bottom=0.3, right=None, top=None, wspace=0.05, hspace=None)
-plt.savefig('qbert.png', dpi=400)
+plt.savefig('Figure_3.png', dpi=400)
 # ========================================================================================
 
 
 
 
-# ========================================================================================
+# ================================ OhioT1DM ==============================================
 dir = './real_data_results/'
 paths = ['dqn.csv', 'ddqn.csv', 'qrdqn.csv', '4_methods.csv']
 paths = [os.path.join(dir, path) for path in paths]
@@ -210,5 +210,5 @@ axes[3].legend(loc='upper left')
 
 axes[0].set_ylabel('value')
 
-plt.savefig('seal_mh.png', dpi=400, bbox_inches='tight')
+plt.savefig('Figure_4.png', dpi=400, bbox_inches='tight')
 # ========================================================================================

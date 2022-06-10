@@ -76,7 +76,7 @@ def compare_within_ckpt(kf, bc, config, working_directory,
         # adv_learner1._eval(100)
 
         advs2 = qtildes - qtildes.mean(axis=1, keepdims=True)
-        adv_learner2 = AdvantageLearner()
+        adv_learner2 = AdvantageLearner(name=name, num_actions=num_actions)
         adv_learner2._train(states, advs2)
         adv_learner2._eval(100)
 

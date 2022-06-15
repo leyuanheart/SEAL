@@ -69,7 +69,7 @@ for index, row in datas.iterrows():
 trajs = [traj for person in persons for traj in person]
 
 
-with open('./trajs_mh_sim.pkl', 'wb') as f:
+with open('./trajs_mh.pkl', 'wb') as f:
     pickle.dump(trajs, f)
 
 
@@ -78,49 +78,49 @@ with open('./trajs_mh_sim.pkl', 'wb') as f:
 # with open(path, 'rb') as f:
 #     trajs = pickle.load(f)
     
-rm = []
-for i, traj in enumerate(trajs):
-    if len(traj) != 21:
-        rm.append(i)
+# rm = []
+# for i, traj in enumerate(trajs):
+    # if len(traj) != 21:
+        # rm.append(i)
 
-keep = set(range(len(trajs))) - set(rm)
+# keep = set(range(len(trajs))) - set(rm)
 
-trajs = np.array(trajs)
+# trajs = np.array(trajs)
 
-trajs = trajs[list(keep)]
-
-
-states = np.array([item[0] for traj in trajs for item in traj])
-actions = np.array([item[1] for traj in trajs for item in traj])
-rewards = np.array([item[2] for traj in trajs for item in traj])
-next_states = np.array([item[3] for traj in trajs for item in traj])
-dones = np.array([item[4] for traj in trajs for item in traj])
+# trajs = trajs[list(keep)]
 
 
-# add noises to rewards,states, next_states
-rewards = rewards + np.random.randn(5649) * np.sqrt(2)
-states = states + np.random.randn(5649, 15)* np.sqrt(2)
-next_states = next_states + np.random.randn(5649, 15)* np.sqrt(2)
+# states = np.array([item[0] for traj in trajs for item in traj])
+# actions = np.array([item[1] for traj in trajs for item in traj])
+# rewards = np.array([item[2] for traj in trajs for item in traj])
+# next_states = np.array([item[3] for traj in trajs for item in traj])
+# dones = np.array([item[4] for traj in trajs for item in traj])
+
+
+## add noises to rewards,states, next_states
+# rewards = rewards + np.random.randn(5649) * np.sqrt(2)
+# states = states + np.random.randn(5649, 15)* np.sqrt(2)
+# next_states = next_states + np.random.randn(5649, 15)* np.sqrt(2)
 
 
 # regenerate the trajs 
-new_trajs = []
-traj = []
+# new_trajs = []
+# traj = []
 
-for i in range(5649):
-    state = states[i]
-    action = actions[i]
-    reward = rewards[i]
-    next_state = next_states[i]
-    done = dones[i]
-    traj.append([state, action, reward, next_state, done])
-    if (i+1) % 21 == 0:
-        new_trajs.append(traj)
-        traj = []
+# for i in range(5649):
+    # state = states[i]
+    # action = actions[i]
+    # reward = rewards[i]
+    # next_state = next_states[i]
+    # done = dones[i]
+    # traj.append([state, action, reward, next_state, done])
+    # if (i+1) % 21 == 0:
+        # new_trajs.append(traj)
+        # traj = []
     
         
-with open('./trajs_mh_sim.pkl', 'wb') as f:
-    pickle.dump(new_trajs, f)
+# with open('./trajs_mh_sim.pkl', 'wb') as f:
+    # pickle.dump(new_trajs, f)
 
 
 

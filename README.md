@@ -31,7 +31,7 @@ $$R_t = \begin{cases}
 
 Let $X\_t=(G\_t,C\_t,\hbox{Ex}\_t)$. We define the state $S\_t$ by concatenating measurements over the last four decision points, i.e., $S\_t = (X\_{t-3}, A\_{t-3}, \cdots, X\_t)^\top$. This ensures the Markov assumption is satisfied. The number of decision points for each patient in the OhioT1DM dataset ranges from 1119 to 1288. Transitions across different days are treated as independent trajectories. 
 
-The data used in the paper is called the `trajs_mh.pkl`.  However, for confidentiality considerations, we add some noises to the data and provide the `trajs_mh_sim.pkl` in the `data` folder.  The code to generate these two data is placed in the `generate_trajs_mh.py`  in the `data` folder. Once you have downloaded the raw data, put it in the same folder as the code, and then run the code to get the data used in this paper.
+The data used in the paper is called the `trajs_mh.pkl`.  However, for confidentiality considerations, we do not put it in this repository.  The code to generate this data is placed in the `generate_trajs_mh.py`  in the `data` folder. Once you have downloaded the raw data, put it in the same folder as the code, and then run the code to get the data used in this paper.
 
 ## Synthetic data
 

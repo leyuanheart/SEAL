@@ -17,17 +17,21 @@ The OhioT1DM dataset is available from [http://smarthealth.cs.ohio.edu/OhioT1DM-
 In our experiment, we divide each day of follow-up into one hour intervals and a treatment decision is made every
 hour. We consider three important time-varying state variables, including the average blood glucose levels $G_{t}$ during the one hour interval $(t-1, t]$, the carbohydrate estimate for the meal $C_{t}$ during $(t-1, t]$ and $\text{Ex}_{t}$ which measures exercise intensity during $(t-1, t]$. At time $t$, we define the action $A_t$ by discretizing the amount of insulin $\text{In}\_t$ injected. The reward $R\_t$ is chosen according to the Index of Glycemic Control that is a deterministic function $G\_{t+1}$. Detailed definitions of $A\_t$ and $R\_t$ are given as follows,
 
-$$A_t  = \begin{cases}
+$$
+A_t = \begin{cases}
 0, & \text{In}_t = 0; \\
 m, & 4m-4 < \text{In}_t \le 4m \,~~(m=1, 2, 3); \\
 4, & \text{In}_t > 12.
-\end{cases}$$ 
+\end{cases}
+$$
 
-$$R_t = \begin{cases}
+$$
+R_t = \begin{cases}
 -\frac{1}{30}(80-G_{t+1})^2, & G_{t+1} < 80; \\
 0, & 80 \le G_{t+1} \le 140; \\
 -\frac{1}{30}(G_{t+1} - 140)^{1.35}, & 140 \le G_{t+1}.
-\end{cases}$$
+\end{cases}
+$$
 
 Let $X\_t=(G\_t,C\_t,\hbox{Ex}\_t)$. We define the state $S\_t$ by concatenating measurements over the last four decision points, i.e., $S\_t = (X\_{t-3}, A\_{t-3}, \cdots, X\_t)^\top$. This ensures the Markov assumption is satisfied. The number of decision points for each patient in the OhioT1DM dataset ranges from 1119 to 1288. Transitions across different days are treated as independent trajectories. 
 
